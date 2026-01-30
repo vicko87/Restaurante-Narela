@@ -1,150 +1,190 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import  { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 function About() {
+  const reservaRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: reservaRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.2, 1, 0.8]);
+
   return (
-    <section id="sobre-nosotros" className="bg-[#1a1f2e] text-white py-32 px-8">
-      <div className="max-w-7xl mx-auto space-y-32">
-        
-        {/* Contenedor principal con grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Lado izquierdo - Imágenes */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-6"
-          >
-            <div className="space-y-6">
-              <img 
-                src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500" 
-                alt="Plato gourmet"
-                className="w-full h-80 object-cover rounded-lg shadow-2xl"
-              />
-            </div>
-            <div className="pt-12">
-              <img 
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500" 
-                alt="Restaurante interior"
-                className="w-full h-96 object-cover rounded-lg shadow-2xl"
-              />
-            </div>
-          </motion.div>
+    <>
+      <section id="sobre-nosotros" className="bg-[#1a1f2e] text-white">
+        <div className='py-32 px-8'>
+          <div className="max-w-7xl mx-auto">
+            
+            {/* Contenedor principal con grid */}
+            <div className="flex flex-col lg:flex-row gap-40 items-center">
+              
+              {/* Lado izquierdo - Imágenes */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="grid grid-cols-2 gap-6"
+              >
+                <div className="space-y-6">
+                  <img 
+                    src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500" 
+                    alt="Plato gourmet"
+                    className="w-full h-80 object-cover rounded-lg shadow-2xl"
+                  />
+                </div>
+                <div className="pt-12">
+                  <img 
+                    src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500" 
+                    alt="Restaurante interior"
+                    className="w-full h-96 object-cover rounded-lg shadow-2xl"
+                  />
+                </div>
+              </motion.div>
 
-          {/* Lado derecho - Texto */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            <div>
-              <p className="text-[#FF6347] text-sm tracking-[0.3em] font-light mb-4">
-                UNA EXPERIENCIA
-              </p>
-              <h2 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
-                <span className="font-serif italic">Qui Som</span>
-              </h2>
+              {/* Lado derecho - Texto */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="space-y-8"
+              >
+                <div>
+                  <p className="text-[#FF6347] text-sm tracking-[0.3em] font-light mb-4">
+                    UNA EXPERIENCIA
+                  </p>
+                  <h2 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
+                    <span className="font-serif italic">Quiénes Somos</span>
+                  </h2>
+                </div>
+
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  En Narela, nos enorgullece ofrecer una experiencia culinaria donde la calidad 
+                  de los ingredientes es insuperable. Cada ingrediente se selecciona con cuidado 
+                  para ofrecerte no solo comida excepcional, sino una experiencia gastronómica 
+                  que deleita tus sentidos y crea recuerdos duraderos.
+                </p>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-b-2 border-[#FF6347] text-[#FF6347] pb-2 tracking-[0.2em] text-sm font-light hover:text-white hover:border-white transition-colors"
+                >
+                  CONÓCENOS
+                </motion.button>
+              </motion.div>
             </div>
-
-            <p className="text-gray-300 text-lg leading-relaxed">
-              En Narela, ens enorgulleix oferir una experiència culinària on la qualitat 
-              dels ingredients és insuperable. Cada ingredient es selecciona amb cura per 
-              a oferir-te no sols menjar excepcional, sinó una experiència gastronòmica 
-              que delecta els teus sentits i crea records duradors.
-            </p>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border-b-2 border-[#FF6347] text-[#FF6347] pb-2 tracking-[0.2em] text-sm font-light hover:text-white hover:border-white transition-colors"
-            >
-              CONEIX-NOS
-            </motion.button>
-          </motion.div>
+          </div>
         </div>
+      </section>
 
-        {/* Sección de características - Diseño elegante */}
+      <section 
+        id="reservar"
+        ref={reservaRef}
+        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
+        {/* Background con parallax animado */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          style={{ scale, y: useTransform(scrollYProgress, [0, 1], [0, 200]) }}
+          className="absolute inset-0 w-full h-full"
         >
-          {/* Característica 1 */}
-          <div className="bg-[#0f1419] p-8 rounded-lg border border-gray-800 hover:border-[#FF6347]/50 transition-all duration-300">
-            <div className="w-12 h-12 bg-[#FF6347]/10 rounded-full flex items-center justify-center mb-6">
-              <svg className="w-6 h-6 text-[#FF6347]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold mb-3 text-white">Qualitat Premium</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Ingredients frescos seleccionats diàriament dels millors proveïdors locals
-            </p>
-          </div>
-
-          {/* Característica 2 */}
-          <div className="bg-[#0f1419] p-8 rounded-lg border border-gray-800 hover:border-[#FF6347]/50 transition-all duration-300">
-            <div className="w-12 h-12 bg-[#FF6347]/10 rounded-full flex items-center justify-center mb-6">
-              <svg className="w-6 h-6 text-[#FF6347]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold mb-3 text-white">Xefs Experts</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Equip culinari amb més de 20 anys d'experiència en alta gastronomia
-            </p>
-          </div>
-
-          {/* Característica 3 */}
-          <div className="bg-[#0f1419] p-8 rounded-lg border border-gray-800 hover:border-[#FF6347]/50 transition-all duration-300">
-            <div className="w-12 h-12 bg-[#FF6347]/10 rounded-full flex items-center justify-center mb-6">
-              <svg className="w-6 h-6 text-[#FF6347]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold mb-3 text-white">Ambient Únic</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Un espai elegant i acollidor dissenyat per a crear moments inoblidables
-            </p>
-          </div>
+          <div
+            className="w-full h-full"
+            style={{
+              backgroundImage: 'url(https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
         </motion.div>
 
-        {/* Estadísticas elegantes */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-gradient-to-r from-[#0f1419] to-[#1a1f2e] p-12 rounded-lg border border-gray-800"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <p className="text-4xl font-bold text-[#FF6347]">15+</p>
-              <p className="text-gray-400 text-xs uppercase tracking-widest">Anys d'experiència</p>
-            </div>
-            <div className="space-y-2">
-              <p className="text-4xl font-bold text-[#FF6347]">50+</p>
-              <p className="text-gray-400 text-xs uppercase tracking-widest">Plats únics</p>
-            </div>
-            <div className="space-y-2">
-              <p className="text-4xl font-bold text-[#FF6347]">10k+</p>
-              <p className="text-gray-400 text-xs uppercase tracking-widest">Clients feliços</p>
-            </div>
-            <div className="space-y-2">
-              <p className="text-4xl font-bold text-[#FF6347]">★★★★★</p>
-              <p className="text-gray-400 text-xs uppercase tracking-widest">Valoració mitjana</p>
-            </div>
-          </div>
-        </motion.div>
+        {/* Overlay oscuro */}
+        <div className="absolute inset-0 bg-black/80 z-10"></div>
 
-      </div>
-    </section>
+        {/* Contenido con parallax */}
+        <motion.div 
+          style={{ y, opacity }}
+          className="relative z-20 max-w-5xl mx-auto px-8 py-20"
+        >
+          {/* Título */}
+          <div className="text-center mb-16">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-[#C9A961] text-sm tracking-[0.3em] font-light mb-6 italic"
+            >
+              ven a Narela
+            </motion.p>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.2em] text-[#C9A961]"
+            >
+              <span className="text-white">{'><'}</span>RESERVAR MESA<span className="text-white">{'><'}</span>
+            </motion.h2>
+          </div>
+
+          {/* Formulario */}
+          <motion.form 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="space-y-6"
+          >
+            {/* Primera fila - 4 inputs */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <input
+                type="text"
+                placeholder="Nombre"
+                className="bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
+              />
+              <input
+                type="tel"
+                placeholder="Teléfono"
+                className="bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
+              />
+              <input
+                type="number"
+                placeholder="Nº comensales"
+                className="bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
+              />
+              <input
+                type="date"
+                className="bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
+              />
+            </div>
+
+            {/* Segunda fila - Input de hora */}
+            <input
+              type="time"
+              placeholder="*Hora*"
+              className="w-full bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
+            />
+
+            {/* Botón enviar */}
+            <div className="flex justify-center pt-6">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                type="submit"
+                className="border border-[#C9A961] text-[#C9A961] px-12 py-3 tracking-[0.3em] text-sm font-light hover:bg-[#C9A961] hover:text-black transition-all duration-300"
+              >
+                ENVIAR
+              </motion.button>
+            </div>
+          </motion.form>
+        </motion.div>
+      </section>
+    </>
   );
 }
 

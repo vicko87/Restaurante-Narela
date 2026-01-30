@@ -4,7 +4,7 @@ import Navbar from '../components/layout/Navbar.jsx'
 import About from '../components/sections/About'
 // import Menu from '../components/sections/Menu'
 // import Gallery from '../components/sections/Gallery'
-// import Contact from '../components/sections/Contact'
+ import Contact from '../components/sections/Contact'
 
 
 
@@ -16,7 +16,7 @@ function Home() {
                 <Hero />
                 <About/>
                 {/* <Menu/> */}     
-                {/* <Contact/> */}
+                 <Contact/> 
             </main>
              <Footer/> 
         </>
