@@ -100,9 +100,10 @@ function Carta() {
             transition={{ duration: 0.5 }}
             className="relative z-10 w-full max-w-3xl mx-auto"
           >
-            <div className="bg-white rounded-lg shadow-2xl border border-[#C9A961]/20">
+            {/* 🔧 CAMBIO: Añadido padding uniforme p-12 */}
+            <div className="bg-white rounded-lg shadow-2xl border border-[#C9A961]/20 p-12">
               {/* Header */}
-              <div className="px-12 pt-10 pb-6 border-b border-[#C9A961]/20">
+              <div className="border-b border-[#C9A961]/20 pb-6 mb-10">
                 <button
                   onClick={() => setShowWines(false)}
                   className="text-[#C9A961] hover:text-[#FF6347] flex items-center gap-2 text-base transition-colors mb-6"
@@ -110,17 +111,17 @@ function Carta() {
                   ← Volver
                 </button>
 
-                <h2 className="text-5xl font-serif italic text-center text-[#C9A961] tracking-wide">
+                <h2 className="text-4xl font-serif italic text-center text-[#C9A961] tracking-wide">
                   Carta de Vins
                 </h2>
               </div>
 
-              {/* Contenido */}
-              <div className="px-16 py-10 space-y-10 max-h-[60vh] overflow-y-auto">
+              {/* Contenido con padding interno */}
+              <div className="space-y-8 max-h-[50vh] overflow-y-auto pr-4">
                 
                 {/* Vinos Blancos */}
                 <section>
-                  <h3 className="text-2xl font-serif text-[#C9A961] mb-6 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl font-serif text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     Vinos Blancos
                   </h3>
                   <div className="space-y-3">
@@ -144,7 +145,7 @@ function Carta() {
 
                 {/* Vinos Tintos */}
                 <section>
-                  <h3 className="text-2xl font-serif text-[#C9A961] mb-6 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl font-serif text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     Vinos Tintos
                   </h3>
                   <div className="space-y-3">
@@ -168,7 +169,7 @@ function Carta() {
 
                 {/* Vinos Rosados */}
                 <section>
-                  <h3 className="text-2xl font-serif text-[#C9A961] mb-6 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl font-serif text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     Vinos Rosados
                   </h3>
                   <div className="space-y-3">
@@ -191,12 +192,13 @@ function Carta() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.5 }}
-            className="relative z-10 w-full max-w-3xl mx-auto"
+            className="relative z-10 w-full max-w-4xl mx-auto"
           >
-            <div className="bg-white rounded-lg shadow-2xl border border-[#C9A961]/20">
-              {/* Header con borde inferior */}
-              <div className="px-12 pt-10 pb-6 border-b border-[#C9A961]/20">
-                <div className="flex justify-between items-center mb-6">
+            {/* 🔧 CAMBIO PRINCIPAL: p-12 para padding uniforme en los 4 lados */}
+            <div className="bg-white rounded-lg shadow-2xl border border-[#C9A961]/20 p-12">
+              {/* Header - sin padding extra, usa el del contenedor */}
+              <div className="border-b border-[#C9A961]/20 pb-4 mb-8">
+                <div className="flex justify-between items-center mb-3">
                   <button
                     onClick={() => {
                       setShowMenu(false);
@@ -232,20 +234,20 @@ function Carta() {
                   </div>
                 </div>
 
-                <h2 className="text-5xl font-serif italic text-center text-[#C9A961] tracking-wide">
+                <h2 className="text-4xl font-serif italic text-center text-[#C9A961] tracking-wide">
                   Narela
                 </h2>
               </div>
 
-              {/* Contenido del menú con mucho padding lateral */}
-              <div className="px-16 py-10 space-y-10 max-h-[60vh] overflow-y-auto">
+              {/* 🔧 CAMBIO: Contenido con espacio reducido y padding derecho para scroll */}
+              <div className="space-y-6 max-h-[55vh] overflow-y-auto pr-4">
                 
                 {/* Entrantes */}
                 <section>
-                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-5 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     {t('carta.entrantes')}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     <div className="flex items-baseline">
                       <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.panCoca')}</span>
                       <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
@@ -276,10 +278,10 @@ function Carta() {
 
                 {/* Ensaladas */}
                 <section>
-                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-5 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     {t('carta.ensaladas')}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     <div className="flex items-baseline">
                       <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.ensaladaNarela')}</span>
                       <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
@@ -300,10 +302,10 @@ function Carta() {
 
                 {/* Carnes */}
                 <section>
-                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-5 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     {t('carta.carnes')}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     <div className="flex items-baseline">
                       <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.solomillo')}</span>
                       <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
@@ -329,10 +331,10 @@ function Carta() {
 
                 {/* Mariscos */}
                 <section>
-                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-5 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     {t('carta.mariscos')}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     <div className="flex items-baseline">
                       <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.pulpo')}</span>
                       <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
@@ -363,10 +365,10 @@ function Carta() {
 
                 {/* Pescados */}
                 <section>
-                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-5 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     {t('carta.pescados')}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     <div className="flex items-baseline">
                       <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.dorada')}</span>
                       <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
@@ -397,10 +399,10 @@ function Carta() {
 
                 {/* Paellas */}
                 <section>
-                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-5 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     {t('carta.paella')}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     <div className="flex items-baseline">
                       <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.paellaMariscos')}</span>
                       <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
@@ -421,10 +423,10 @@ function Carta() {
 
                 {/* Postres */}
                 <section>
-                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-5 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
                     {t('carta.postres')}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     <div className="flex items-baseline">
                       <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.cremaCatalana')}</span>
                       <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>

@@ -3,7 +3,7 @@ import Navbar from '../components/layout/Navbar.jsx'
  import Footer from '../components/layout/Footer'
 import About from '../components/sections/About'
 import Carta from '../components/sections/Carta.jsx'
-// import Gallery from '../components/sections/Gallery'
+import Gallery from '../components/sections/Gallery'
  import Contact from '../components/sections/Contact'
 
 
@@ -17,6 +17,7 @@ function Home() {
                 <About/>
                 <Carta/>     
                  <Contact/> 
+                <Gallery/>
             </main>
              <Footer/> 
         </>

@@ -2,8 +2,12 @@ import { motion } from 'framer-motion';
 
 function Contact() {
   return (
-    <section id="contacto" className="bg-[#0a0a0a] text-white py-20 px-8">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="contacto"
+      // 🔧 CAMBIO 1: centrado vertical y horizontal + altura mínima
+      className="bg-[#0a0a0a] text-white py-20 px-8 flex items-center justify-center min-h-screen"
+    >
+      <div className="max-w-7xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,16 +25,20 @@ function Contact() {
             </h2>
           </div>
 
-          {/* Contenido - Grid de 3 columnas */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+          {/* Contenido - Grid */}
+          <div
+            // 🔧 CAMBIO 2: place-items-center para centrar columnas
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center place-items-center"
+          >
             
-            {/* Columna 1: Dirección y Contacto */}
+            {/* Columna 1 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6"
+              // 🔧 CAMBIO 3: flex + items-center
+              className="space-y-6 flex flex-col items-center text-center"
             >
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-[#C9A961]">Ubicación</h3>
@@ -43,8 +51,8 @@ function Contact() {
 
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-[#C9A961]">Contacto</h3>
-                <a 
-                  href="tel:+34682788039" 
+                <a
+                  href="tel:+34600700102"
                   className="text-gray-300 hover:text-[#C9A961] transition-colors block"
                 >
                   (+34) 600 70 01 02
@@ -52,65 +60,69 @@ function Contact() {
               </div>
             </motion.div>
 
-            {/* Columna 2: Horarios Entre Semana */}
+            {/* Columna 2 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="space-y-4"
+              // 🔧 CAMBIO 3 aplicado también aquí
+              className="space-y-4 flex flex-col items-center text-center"
             >
               <h3 className="text-xl font-semibold mb-6 text-[#C9A961]">Horarios</h3>
-              
-              <div className="space-y-3">
-                <div className="flex justify-between items-center border-b border-gray-800 pb-2">
+
+              <div className="space-y-3 max-w-xs">
+                <div className="flex justify-between border-b border-gray-800 pb-2 w-64">
                   <span className="text-gray-400">Lunes</span>
                   <span className="text-gray-200">08:30 – 00:00</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-gray-800 pb-2">
+                <div className="flex justify-between border-b border-gray-800 pb-2 w-64">
                   <span className="text-gray-400">Martes</span>
                   <span className="text-gray-200 italic">Cerrado</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-gray-800 pb-2">
+                <div className="flex justify-between border-b border-gray-800 pb-2 w-64">
                   <span className="text-gray-400">Miércoles</span>
                   <span className="text-gray-200">08:30 – 00:00</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-gray-800 pb-2">
+                <div className="flex justify-between border-b border-gray-800 pb-2 w-64">
                   <span className="text-gray-400">Jueves</span>
                   <span className="text-gray-200">08:30 – 00:00</span>
                 </div>
               </div>
             </motion.div>
 
-            {/* Columna 3: Horarios Fin de Semana */}
+            {/* Columna 3 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-4"
+              // 🔧 CAMBIO 3 aplicado también aquí
+              className="space-y-4 flex flex-col items-center text-center"
             >
-              <h3 className="text-xl font-semibold mb-6 text-[#C9A961] opacity-0">Horarios</h3>
-              
-              <div className="space-y-3">
-                <div className="flex justify-between items-center border-b border-gray-800 pb-2">
+              {/* 🔧 CAMBIO 4: invisible en vez de opacity-0 */}
+              <h3 className="text-xl font-semibold mb-6 text-[#C9A961] invisible">
+                Horarios
+              </h3>
+
+              <div className="space-y-3 max-w-xs">
+                <div className="flex justify-between border-b border-gray-800 pb-2 w-64">
                   <span className="text-gray-400">Viernes</span>
                   <span className="text-gray-200">08:30 – 01:00</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-gray-800 pb-2">
+                <div className="flex justify-between border-b border-gray-800 pb-2 w-64">
                   <span className="text-gray-400">Sábado</span>
                   <span className="text-gray-200">09:00 – 01:00</span>
                 </div>
-                <div className="flex justify-between items-center border-b border-gray-800 pb-2">
+                <div className="flex justify-between border-b border-gray-800 pb-2 w-64">
                   <span className="text-gray-400">Domingo</span>
                   <span className="text-gray-200">09:00 – 17:00</span>
                 </div>
               </div>
             </motion.div>
-
           </div>
 
-          {/* Información adicional */}
+          {/* Info extra */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
