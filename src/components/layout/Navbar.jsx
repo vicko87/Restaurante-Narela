@@ -48,7 +48,7 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
               className="text-white text-sm font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
             >
-              MENÚ
+              CARTA
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF6347] group-hover:w-full transition-all duration-300"></span>
             </a>
           </li>
