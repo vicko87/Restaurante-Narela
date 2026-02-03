@@ -195,10 +195,10 @@ function Carta() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.5 }}
-            className="relative z-10 w-full max-w-4xl mx-auto"
+            className="relative z-10 w-full max-w-5xl mx-auto"
           >
             {/* 🔧 CAMBIO PRINCIPAL: p-12 para padding uniforme en los 4 lados */}
-            <div className="bg-white rounded-lg shadow-2xl border border-[#C9A961]/20 p-12">
+            <div className="bg-white rounded-lg shadow-1xl border border-[#C9A961]/20 p-4">
               {/* Header - sin padding extra, usa el del contenedor */}
               <div className="border-b border-[#C9A961]/20 pb-4 mb-8">
                 <div className="flex justify-between items-center mb-3">
@@ -209,7 +209,7 @@ function Carta() {
                     }}
                     className="text-[#C9A961] hover:text-[#FF6347] flex items-center gap-2 text-base transition-colors"
                   >
-                    ← {t('carta.back')}
+                    ← {t('carta.back')} 
                   </button>
                   
                   {/* Selector de idioma */}
@@ -243,37 +243,37 @@ function Carta() {
               </div>
 
      
-              <div className="space-y-6 max-h-[55vh] overflow-y-auto pr-4">
+<div className="space-y-6 max-h-[55vh] overflow-y-auto scrollbar-hide">
                 
                 {/* Entrantes */}
                 <section>
-                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
+                  <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-6 pb-2 border-b border-[#C9A961]/30">
                     {t('carta.entrantes')}
                   </h3>
-                  <div className="space-y-2.5">
+                  <div className="space-y-4">
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.panCoca')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.panCoca')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">3,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.jamon')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.jamon')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">16,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.queso')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.queso')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">14,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.croquetas')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.croquetas')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">1,90 € unidad</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.gambas')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.gambas')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">9,50 €</span>
                     </div>
                   </div>
@@ -286,23 +286,22 @@ function Carta() {
                   </h3>
                   <div className="space-y-2.5">
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.ensaladaNarela')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.ensaladaNarela')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">11,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.burrata')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.burrata')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">12,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.cesar')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.cesar')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">10,50 €</span>
                     </div>
                   </div>
                 </section>
-
                 {/* Carnes */}
                 <section>
                   <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
@@ -310,23 +309,23 @@ function Carta() {
                   </h3>
                   <div className="space-y-2.5">
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.solomillo')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.solomillo')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">26,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.pollo')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.pollo')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">16,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.entrecot')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.entrecot')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">24,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.secreto')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.secreto')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">18,50 €</span>
                     </div>
                   </div>
@@ -339,33 +338,32 @@ function Carta() {
                   </h3>
                   <div className="space-y-2.5">
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.pulpo')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.pulpo')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">22,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.polpoBrasa')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.polpoBrasa')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">22,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.calamares')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.calamares')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">15,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.mejillones')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.mejillones')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">13,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.langostinos')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.langostinos')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">14,50 €</span>
                     </div>
                   </div>
                 </section>
-
                 {/* Pescados */}
                 <section>
                   <h3 className="text-xl uppercase tracking-wider font-light text-[#C9A961] mb-4 pb-2 border-b border-[#C9A961]/30">
@@ -373,28 +371,28 @@ function Carta() {
                   </h3>
                   <div className="space-y-2.5">
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.dorada')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.dorada')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">23,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.lubina')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.lubina')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">24,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.salmón')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.salmón')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">19,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.bacalao')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.bacalao')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">17,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.atún')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.atún')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">13,50 €</span>
                     </div>
                   </div>
@@ -407,18 +405,18 @@ function Carta() {
                   </h3>
                   <div className="space-y-2.5">
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.paellaMariscos')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.paellaMariscos')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">22,00 €/pers</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.paellaMixta')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.paellaMixta')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">20,00 €/pers</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.paellaVegetariana')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.paellaVegetariana')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">16,00 €/pers</span>
                     </div>
                   </div>
@@ -431,28 +429,28 @@ function Carta() {
                   </h3>
                   <div className="space-y-2.5">
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.cremaCatalana')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.cremaCatalana')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">6,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.tartaQueso')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.tartaQueso')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">7,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.brownie')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.brownie')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">7,50 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.helado')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.helado')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">5,00 €</span>
                     </div>
                     <div className="flex items-baseline">
-                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[280px]">{t('carta.frutaTemporada')}</span>
-                      <span className="flex-1 border-b border-dotted border-gray-300 mx-4 mb-1"></span>
+                      <span className="text-gray-800 text-sm italic flex-shrink-0 min-w-[320px]">{t('carta.frutaTemporada')}</span>
+                      <span className="flex-1 border-b border-dotted border-gray-300 ml-4 mr-8 mb-1"></span>
                       <span className="text-[#C9A961] font-normal text-base flex-shrink-0">5,50 €</span>
                     </div>
                   </div>
