@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 function Gallery() {
   const [selectedDish, setSelectedDish] = useState(null);
-  const [activeCategory, setActiveCategory] = useState('Todos');
+  const [activeCategory] = useState('Todos');
 
   // Platos con imágenes reales
   const menuDishes = [
@@ -125,7 +125,7 @@ function Gallery() {
 
   ];
 
-  const categories = ['Todos', 'Entrantes', 'Mariscos', 'Arroces', 'Pescados', 'Postres'];
+
 
   const filteredDishes = activeCategory === 'Todos' 
     ? menuDishes 
@@ -146,7 +146,7 @@ function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 relative z-10"
+          className="text-center  mt-20 relative z-10  flex flex-col gap-6"
         >
           <p className="text-[#C9A961] text-xs tracking-[0.6em] font-light italic uppercase mb-4">
             Descubre
@@ -155,30 +155,6 @@ function Gallery() {
             Nuestro Menú
           </h2>
           <div className="w-20 h-0.5 bg-[#C9A961] mx-auto"></div>
-        </motion.div>
-
-        {/* Filtros elegantes */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-16 relative z-10"
-        >
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveCategory(category)}
-              className={`px-8 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-[#C9A961] text-black'
-                  : 'bg-white/5 text-gray-400 border border-[#C9A961]/20 hover:border-[#C9A961]/50'
-              }`}
-            >
-              {category}
-            </motion.button>
-          ))}
         </motion.div>
 
         {/* Grid con imágenes animadas tipo video */}
@@ -482,9 +458,7 @@ function Gallery() {
                     transition={{ delay: 0.5 }}
                     className="mb-8"
                   >
-                    <h4 className="text-[#C9A961] text-xs font-bold tracking-widest uppercase mb-3">
-                      Ingredientes principales
-                    </h4>
+        
                     <p className="text-gray-400 text-base italic">
                       {selectedDish.ingredients}
                     </p>

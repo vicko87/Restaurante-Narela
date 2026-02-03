@@ -33,13 +33,14 @@ function Carta() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative z-10 max-w-6xl mx-auto text-center space-y-20"
+            className="relative z-10 max-w-6xl mx-auto text-center"
           >
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-6 mb-12"
+              style={{ marginBottom: '3rem' }} // Increase spacing between title and photos
             >
               <p className="text-[#C9A961] text-xs tracking-[0.6em] font-light italic uppercase">
                 {t('carta.subtitle')}
@@ -48,18 +49,19 @@ function Carta() {
                 Carta
               </h2>
             </motion.div>
+            <motion.div className="h-12" />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col md:flex-row justify-center gap-10"
+              className="flex flex-row justify-center items-center gap-8 mb-12"
             >
               <motion.button
                 whileHover={{ scale: 1.08, y: -8 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => changeLanguage('ca')}
-                className="border-2 border-[#C9A961]/50 text-gray-300 px-20 py-6 tracking-[0.4em] text-xs font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300"
+                className="border-2 border-[#C9A961]/50 text-gray-300 px-24 py-10 tracking-[0.4em] text-base font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300 min-w-[240px]"
               >
                 Català
               </motion.button>
@@ -68,25 +70,26 @@ function Carta() {
                 whileHover={{ scale: 1.08, y: -8 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => changeLanguage('es')}
-                className="border-2 border-[#C9A961]/50 text-gray-300 px-20 py-6 tracking-[0.4em] text-xs font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300"
+                className="border-2 border-[#C9A961]/50 text-gray-300 px-24 py-10 tracking-[0.4em] text-base font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300 min-w-[240px]"
               >
                 Español
               </motion.button>
             </motion.div>
 
+            <motion.div className="h-16" />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="pt-12"
+              className="flex justify-center"
             >
               <motion.button
                 whileHover={{ scale: 1.08, y: -8 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowWines(true)}
-                className="border-2 border-[#C9A961]/60 text-[#C9A961] px-24 py-6 tracking-[0.5em] text-xs font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:shadow-2xl hover:shadow-[#C9A961]/50 transition-all duration-300"
+                className="border-2 border-[#C9A961]/50 text-gray-300 px-24 py-10 tracking-[0.4em] text-base font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300 min-w-[240px]"
               >
-                Carta de Vins
+                Carta Vins
               </motion.button>
             </motion.div>
           </motion.div>
@@ -100,7 +103,7 @@ function Carta() {
             transition={{ duration: 0.5 }}
             className="relative z-10 w-full max-w-3xl mx-auto"
           >
-            {/* 🔧 CAMBIO: Añadido padding uniforme p-12 */}
+           
             <div className="bg-white rounded-lg shadow-2xl border border-[#C9A961]/20 p-12">
               {/* Header */}
               <div className="border-b border-[#C9A961]/20 pb-6 mb-10">
@@ -239,7 +242,7 @@ function Carta() {
                 </h2>
               </div>
 
-              {/* 🔧 CAMBIO: Contenido con espacio reducido y padding derecho para scroll */}
+     
               <div className="space-y-6 max-h-[55vh] overflow-y-auto pr-4">
                 
                 {/* Entrantes */}

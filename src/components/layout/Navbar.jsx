@@ -36,7 +36,7 @@ function Navbar() {
             <a
               href="#inicio"
               onClick={() => setIsOpen(false)}
-              className="text-white text-sm font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
+              className="text-white text-lg font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
             >
               INICIO
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF6347] group-hover:w-full transition-all duration-300"></span>
@@ -46,7 +46,7 @@ function Navbar() {
             <a
               href="#carta"
               onClick={() => setIsOpen(false)}
-              className="text-white text-sm font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
+              className="text-white text-lg font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
             >
               CARTA
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF6347] group-hover:w-full transition-all duration-300"></span>
@@ -56,7 +56,7 @@ function Navbar() {
             <a
               href="#galeria"
               onClick={() => setIsOpen(false)}
-              className="text-white text-sm font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
+              className="text-white text-lg font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
             >
               GALERÍA
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF6347] group-hover:w-full transition-all duration-300"></span>
@@ -66,7 +66,7 @@ function Navbar() {
             <a
               href="#reservar"
               onClick={() => setIsOpen(false)}
-              className="text-white text-sm font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
+              className="text-white text-lg font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
             >
               RESERVAR
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF6347] group-hover:w-full transition-all duration-300"></span>
@@ -76,7 +76,7 @@ function Navbar() {
             <a
               href="#contacto"
               onClick={() => setIsOpen(false)}
-              className="text-white text-sm font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
+              className="text-white text-lg font-semibold tracking-wider hover:text-[#FF6347] transition-colors relative group"
             >
               CONTACTO
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF6347] group-hover:w-full transition-all duration-300"></span>
