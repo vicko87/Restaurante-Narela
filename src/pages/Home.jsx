@@ -5,6 +5,7 @@ import About from '../components/sections/About'
 import Carta from '../components/sections/Carta.jsx'
 import Gallery from '../components/sections/Gallery'
  import Contact from '../components/sections/Contact'
+import Reservar from '../components/sections/Reservar'
 
 
 
@@ -15,7 +16,8 @@ function Home() {
             <main className="pt-24">
                 <Hero />
                 <About/>
-                <Carta/>     
+                <Carta/>
+                <Reservar/>     
                  <Contact/> 
                 <Gallery/>
             </main>

@@ -39,165 +39,87 @@ function Reservar() {
       {/* Contenido con parallax */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-20 max-w-7xl mx-auto px-8 py-20 w-full"
+        className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-20 w-full"
       >
         {/* Título */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-[#C9A961] text-sm tracking-[0.3em] font-light mb-6 italic"
+            className="text-[#C9A961] text-xs sm:text-sm tracking-[0.3em] font-light mb-4 sm:mb-6 italic"
           >
             ven a Narela
           </motion.p>
 
-<motion.h2 
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.3em] text-[#C9A961] flex items-center justify-center whitespace-nowrap"
->
-  <span className="text-white text-4xl sm:text-5xl md:text-6xl mr-4">{'>'}</span>
-  RESERVAR MESA
-  <span className="text-white text-4xl sm:text-5xl md:text-6xl ml-4">{'>'}</span>
-</motion.h2>
-        </div>
-
-        {/* Grid: Formulario + Info */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 gap-12 items-start">
-
-          {/* Lado izquierdo: Formulario */}
-          <motion.form
-            initial={{ opacity: 0, y: 30 }}
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-6"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[0.2em] sm:tracking-[0.3em] text-[#C9A961] flex items-center justify-center flex-wrap sm:whitespace-nowrap"
           >
-            {/* Primera fila - 2 inputs */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                type="text"
-                placeholder="Nombre"
-                className="bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
-              />
-              <input
-                type="tel"
-                placeholder="Teléfono"
-                className="bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
-              />
-            </div>
+            <span className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl mr-2 sm:mr-4">{'>'}</span>
+            <span className="px-1 sm:px-0">RESERVAR MESA</span>
+            <span className="text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl ml-2 sm:ml-4">{'<'}</span>
+          </motion.h2>
+        </div>
 
-            {/* Segunda fila - 2 inputs */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input
-                type="number"
-                placeholder="Nº comensales"
-                className="bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
-              />
-              <input
-                type="date"
-                className="bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
-              />
-            </div>
-
-            {/* Tercera fila - Input de hora */}
+        {/* Formulario centrado */}
+        <motion.form
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="max-w-3xl mx-auto space-y-4 sm:space-y-6"
+        >
+          {/* Primera fila - 2 inputs */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <input
-              type="time"
-              placeholder="*Hora*"
-              className="w-full bg-transparent border border-[#C9A961]/40 px-6 py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors"
+              type="text"
+              placeholder="Nombre"
+              className="bg-transparent border border-[#C9A961]/40 px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors text-sm sm:text-base"
             />
+            <input
+              type="tel"
+              placeholder="Teléfono"
+              className="bg-transparent border border-[#C9A961]/40 px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors text-sm sm:text-base"
+            />
+          </div>
 
-            {/* Botón enviar */}
-            <div className="flex justify-center pt-6">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                type="submit"
-                className="border border-[#C9A961] text-[#C9A961] px-12 py-3 tracking-[0.3em] text-sm font-light hover:bg-[#C9A961] hover:text-black transition-all duration-300"
-              >
-                ENVIAR
-              </motion.button>
-            </div>
-          </motion.form>
+          {/* Segunda fila - 2 inputs */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <input
+              type="number"
+              placeholder="Nº comensales"
+              className="bg-transparent border border-[#C9A961]/40 px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors text-sm sm:text-base"
+            />
+            <input
+              type="date"
+              className="bg-transparent border border-[#C9A961]/40 px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors text-sm sm:text-base"
+            />
+          </div>
 
-          {/* Lado derecho: Mapa e Información */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="space-y-8"
-          >
-            {/* Mapa */}
-            <div className="w-full h-64 rounded-lg overflow-hidden border border-[#C9A961]/40">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2990.274289045095!2d2.3927841!3d41.5043397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f3b7c3e3e3%3A0x0!2zNDHCsDMwJzE1LjYiTiAywrAyMyczNC4wIkU!5e0!3m2!1ses!2ses!4v1234567890"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
+          {/* Tercera fila - Input de hora */}
+          <input
+            type="time"
+            placeholder="*Hora*"
+            className="w-full bg-transparent border border-[#C9A961]/40 px-4 sm:px-6 py-3 sm:py-4 text-white placeholder-gray-400 focus:border-[#C9A961] focus:outline-none transition-colors text-sm sm:text-base"
+          />
 
-            {/* Información de contacto */}
-            <div className="bg-black/40 backdrop-blur-sm border border-[#C9A961]/30 rounded-lg p-8 space-y-6">
-
-              {/* Título */}
-              <div className="text-center mb-6">
-                <p className="text-[#C9A961] text-sm tracking-[0.3em] font-light mb-2 italic">
-                  Restaurante Narela
-                </p>
-                <h3 className="text-2xl font-bold text-[#C9A961] tracking-wider">
-                  TROBA'NS
-                </h3>
-              </div>
-
-              {/* Dirección */}
-              <div className="space-y-2">
-                <h4 className="text-[#C9A961] font-semibold tracking-wider uppercase text-sm">
-                  Dirección
-                </h4>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Carrer Sant Anreu, 24, 08340 Vilassar de Mar, Barcelona
-                </p>
-              </div>
-
-              {/* Teléfono */}
-              <div className="space-y-2">
-                <h4 className="text-[#C9A961] font-semibold tracking-wider uppercase text-sm">
-                  Teléfono
-                </h4>
-                <a
-                  href="tel:+34600700102"
-                  className="text-gray-300 text-sm hover:text-[#C9A961] transition-colors"
-                >
-                  (+34) 600 70 01 02
-                </a>
-              </div>
-
-              {/* Email */}
-              <div className="space-y-2">
-                <h4 className="text-[#C9A961] font-semibold tracking-wider uppercase text-sm">
-                  Email
-                </h4>
-                <a
-                  href="mailto:restaurantnarela@gmail.com"
-                  className="text-gray-300 text-sm hover:text-[#C9A961] transition-colors"
-                >
-                  restaurantnarela@gmail.com
-                </a>
-              </div>
-
-            </div>
-          </motion.div>
-
-        </div>
+          {/* Botón enviar */}
+          <div className="flex justify-center pt-4 sm:pt-6">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              type="submit"
+              className="border border-[#C9A961] text-[#C9A961] px-8 sm:px-12 py-3 tracking-[0.2em] sm:tracking-[0.3em] text-xs sm:text-sm font-light hover:bg-[#C9A961] hover:text-black transition-all duration-300"
+            >
+              ENVIAR
+            </motion.button>
+          </div>
+        </motion.form>
       </motion.div>
     </section>
   );
