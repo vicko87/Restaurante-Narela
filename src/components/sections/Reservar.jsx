@@ -52,21 +52,22 @@ function Reservar() {
           >
             ven a Narela
           </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.3em] text-[#C9A961] flex items-center justify-center"
-          >
-            <span className="text-white text-6xl mr-4">{'>'}</span>
-            RESERVAR MESA
-            <span className="text-white text-6xl ml-4">{'>'}</span>
-          </motion.h2>
+
+<motion.h2 
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.3em] text-[#C9A961] flex items-center justify-center whitespace-nowrap"
+>
+  <span className="text-white text-4xl sm:text-5xl md:text-6xl mr-4">{'>'}</span>
+  RESERVAR MESA
+  <span className="text-white text-4xl sm:text-5xl md:text-6xl ml-4">{'>'}</span>
+</motion.h2>
         </div>
 
         {/* Grid: Formulario + Info */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 gap-12 items-start">
 
           {/* Lado izquierdo: Formulario */}
           <motion.form
