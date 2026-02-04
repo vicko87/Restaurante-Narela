@@ -179,10 +179,10 @@ function Gallery() {
                 className="group cursor-pointer w-full max-w-sm"
               >
                 {/* Card con imagen real animada */}
-                <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border border-[#C9A961]/20 rounded-2xl overflow-hidden hover:border-[#C9A961]/60 transition-all duration-300 shadow-lg hover:shadow-[#C9A961]/20">
+       <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border border-[#C9A961]/20 rounded-2xl overflow-hidden hover:border-[#C9A961]/60 transition-all duration-300 shadow-lg hover:shadow-[#C9A961]/20 h-[520px] flex flex-col">
                   
                   {/* Imagen con efecto de video vivo */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative  h-80 overflow-hidden">
                     {/* Imagen con zoom continuo (efecto video) */}
                     <motion.img
                       src={dish.image}
@@ -290,7 +290,7 @@ function Gallery() {
                   </div>
 
                   {/* Contenido inferior */}
-                  <div className="p-6">
+               <div className="p-6 flex-1 flex flex-col justify-between">
                     {/* Nombre del plato */}
                     <h3 className="text-white text-xl font-serif mb-2 group-hover:text-[#C9A961] transition-colors">
                       {dish.name}
