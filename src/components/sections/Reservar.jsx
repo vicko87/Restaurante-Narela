@@ -16,7 +16,7 @@ function Reservar() {
     <section
       id="reservar"
       ref={reservaRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32"
     >
       {/* Background con parallax animado */}
       <motion.div
@@ -42,13 +42,13 @@ function Reservar() {
         className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-20 w-full"
       >
         {/* Título */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-[#C9A961] text-xs sm:text-sm tracking-[0.3em] font-light mb-4 sm:mb-6 italic"
+            className="text-[#C9A961] text-xs sm:text-sm tracking-[0.3em] font-light mb-6 sm:mb-8 italic"
           >
             ven a Narela
           </motion.p>
