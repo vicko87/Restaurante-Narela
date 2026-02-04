@@ -126,7 +126,7 @@ function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.2em] text-[#C9A961]"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.2em] text-[#C9A961]  whitespace-nowrap"
             >
               <span className="text-white">{'><'}</span>RESERVAR MESA<span className="text-white">{'><'}</span>
             </motion.h2>
