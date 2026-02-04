@@ -198,7 +198,7 @@ function Carta() {
             className="relative z-10 w-full max-w-5xl mx-auto"
           >
            
-            <div className="bg-white rounded-lg shadow-1xl border border-[#C9A961]/20 p-4">
+           <div className="bg-white rounded-lg shadow-1xl border border-[#C9A961]/20 p-3 sm:p-6 md:p-8 lg:p-12">
               {/* Header - sin padding extra, usa el del contenedor */}
               <div className="border-b border-[#C9A961]/20 pb-4 mb-8">
                 <div className="flex justify-between items-center mb-3">
@@ -242,8 +242,8 @@ function Carta() {
                 </h2>
               </div>
 
-     
-<div className="space-y-6 max-h-[55vh] overflow-y-auto scrollbar-hide">
+     <div className="space-y-4 sm:space-y-6 max-h-[50vh] sm:max-h-[55vh] overflow-y-auto scrollbar-hide">
+
                 
                 {/* Entrantes */}
                 <section>
