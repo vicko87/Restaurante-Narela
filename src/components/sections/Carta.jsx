@@ -26,8 +26,7 @@ function Carta() {
       <div className="absolute inset-0 bg-black/85"></div>
 
       <AnimatePresence mode="wait">
-        {!showMenu && !showWines ? (
-          // Vista de selección
+          {!showMenu && !showWines ? (
           <motion.div
             key="selector"
             initial={{ opacity: 0 }}
@@ -39,60 +38,61 @@ function Carta() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6 mb-12"
-              style={{ marginBottom: '3rem' }} // Increase spacing between title and photos
+              className="space-y-6 mb-8 sm:mb-12"
             >
               <p className="text-[#C9A961] text-xs tracking-[0.6em] font-light italic uppercase">
                 {t('carta.subtitle')}
               </p>
-              <h2 className="text-8xl md:text-9xl font-serif italic text-[#C9A961] tracking-wider leading-none">
+              <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-serif italic text-[#C9A961] tracking-wider leading-none">
                 Carta
               </h2>
             </motion.div>
-            <motion.div className="h-12" />
+            
+            <motion.div className="h-8 sm:h-12" /> 
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-row justify-center items-center gap-8 mb-12"
-            >
-              <motion.button
-                whileHover={{ scale: 1.08, y: -8 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => changeLanguage('ca')}
-                className="border-2 border-[#C9A961]/50 text-gray-300 px-24 py-10 tracking-[0.4em] text-base font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300 min-w-[240px]"
-              >
-                Català
-              </motion.button>
 
-              <motion.button
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mb-12 px-4"
+>
+  <motion.button
+    whileHover={{ scale: 1.08, y: -8 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={() => changeLanguage('ca')}
+    className="border-2 border-[#C9A961]/50 text-gray-300 px-8 sm:px-16 md:px-24 py-6 sm:py-8 md:py-10 tracking-[0.4em] text-sm sm:text-base font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300 w-full sm:w-auto min-w-[200px] sm:min-w-[240px]"
+  >
+    Català
+  </motion.button>
+     <motion.button
                 whileHover={{ scale: 1.08, y: -8 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => changeLanguage('es')}
-                className="border-2 border-[#C9A961]/50 text-gray-300 px-24 py-10 tracking-[0.4em] text-base font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300 min-w-[240px]"
+                className="border-2 border-[#C9A961]/50 text-gray-300 px-8 sm:px-16 md:px-24 py-6 sm:py-8 md:py-10 tracking-[0.4em] text-sm sm:text-base font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300 w-full sm:w-auto min-w-[200px] sm:min-w-[240px]"
               >
-                Español
-              </motion.button>
-            </motion.div>
 
-            <motion.div className="h-16" />
-            <motion.div
+    Español
+  </motion.button>
+</motion.div>
+<motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex justify-center"
-            >
-              <motion.button
+              className="flex justify-center px-4"
+            ></motion.div>
+
+{/* Y el botón de vinos también: */}
+  <motion.button
                 whileHover={{ scale: 1.08, y: -8 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShowWines(true)}
-                className="border-2 border-[#C9A961]/50 text-gray-300 px-24 py-10 tracking-[0.4em] text-base font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300 min-w-[240px]"
+                className="border-2 border-[#C9A961]/50 text-gray-300 px-8 sm:px-16 md:px-24 py-6 sm:py-8 md:py-10 tracking-[0.4em] text-sm sm:text-base font-light uppercase backdrop-blur-sm hover:bg-[#C9A961]/20 hover:border-[#C9A961] hover:text-[#C9A961] transition-all duration-300 w-full sm:w-auto min-w-[200px] sm:min-w-[240px] max-w-[300px]"
               >
-                Carta Vins
-              </motion.button>
+  Carta Vins
+</motion.button>
             </motion.div>
-          </motion.div>
+          
         ) : showWines ? (
           // Vista de Carta de Vinos
           <motion.div
@@ -197,7 +197,7 @@ function Carta() {
             transition={{ duration: 0.5 }}
             className="relative z-10 w-full max-w-5xl mx-auto"
           >
-            {/* 🔧 CAMBIO PRINCIPAL: p-12 para padding uniforme en los 4 lados */}
+           
             <div className="bg-white rounded-lg shadow-1xl border border-[#C9A961]/20 p-4">
               {/* Header - sin padding extra, usa el del contenedor */}
               <div className="border-b border-[#C9A961]/20 pb-4 mb-8">
