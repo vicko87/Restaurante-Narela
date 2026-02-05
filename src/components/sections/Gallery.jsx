@@ -330,150 +330,133 @@ function Gallery() {
         </motion.div>
       </div>
 
-      {/* Modal con imagen animada */}
-      <AnimatePresence>
-        {selectedDish && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 backdrop-blur-xl"
-            onClick={() => setSelectedDish(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 50 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 50 }}
-              transition={{
-                type: 'spring',
-                damping: 25,
-                stiffness: 200
+    {/* Modal con imagen animada */}
+<AnimatePresence>
+  {selectedDish && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-2 sm:p-4 backdrop-blur-xl"
+      onClick={() => setSelectedDish(null)}
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0, y: 50 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.9, opacity: 0, y: 50 }}
+        transition={{
+          type: 'spring',
+          damping: 25,
+          stiffness: 200
+        }}
+        className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border border-[#C9A961]/30 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Botón cerrar */}
+        <motion.button
+          whileHover={{ rotate: 90, scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setSelectedDish(null)}
+          className="absolute top-3 right-3 sm:top-6 sm:right-6 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center bg-[#C9A961] hover:bg-[#FFD700] transition-colors"
+        >
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </motion.button>
+
+        <div className="grid md:grid-cols-5">
+          {/* Imagen animada - izquierda */}
+          <div className="md:col-span-2 relative overflow-hidden h-48 sm:h-64 md:min-h-[500px]">
+            {/* Imagen con zoom continuo */}
+            <motion.img
+              src={selectedDish.image}
+              alt={selectedDish.name}
+              className="w-full h-full object-cover"
+              animate={{
+                scale: [1, 1.1, 1],
               }}
-              className="relative max-w-4xl w-full bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border border-[#C9A961]/30 rounded-3xl overflow-hidden shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+
+            {/* Overlay con gradiente */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent to-black/50"
+              animate={{
+                opacity: [0.5, 0.8, 0.5],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+
+            {/* Badge flotante */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 px-3 py-1 sm:px-5 sm:py-2 rounded-full backdrop-blur-xl bg-[#C9A961] text-black text-xs sm:text-sm font-bold tracking-wider shadow-lg z-10"
             >
-              {/* Botón cerrar */}
-              <motion.button
-                whileHover={{ rotate: 90, scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setSelectedDish(null)}
-                className="absolute top-6 right-6 z-30 w-12 h-12 rounded-full flex items-center justify-center bg-[#C9A961] hover:bg-[#FFD700] transition-colors"
-              >
-                <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </motion.button>
+              {selectedDish.category}
+            </motion.div>
+          </div>
 
-              <div className="grid md:grid-cols-5">
-                {/* Imagen animada - izquierda */}
-                <div className="md:col-span-2 relative overflow-hidden min-h-[300px] md:min-h-[500px]">
-                  {/* Imagen con zoom continuo */}
-                  <motion.img
-                    src={selectedDish.image}
-                    alt={selectedDish.name}
-                    className="w-full h-full object-cover"
-                    animate={{
-                      scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                      duration: 10,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
+          {/* Contenido - derecha */}
+          <div className="md:col-span-3 p-4 sm:p-6 md:p-12 flex flex-col justify-center">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: 'spring' }}
+              className="inline-block self-start px-4 py-2 sm:px-8 sm:py-3 rounded-xl sm:rounded-2xl text-2xl sm:text-4xl font-bold mb-3 sm:mb-6 bg-[#C9A961]/20 border-2 border-[#C9A961] text-[#C9A961]"
+            >
+              {selectedDish.price}
+            </motion.div>
 
-                  {/* Overlay con gradiente */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent to-black/50"
-                    animate={{
-                      opacity: [0.5, 0.8, 0.5],
-                    }}
-                    transition={{
-                      duration: 5,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
+            <motion.h2
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="text-2xl sm:text-3xl md:text-5xl font-serif italic text-white mb-2 sm:mb-4 leading-tight"
+            >
+              {selectedDish.name}
+            </motion.h2>
 
-                  {/* Badge flotante */}
-                  <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    className="absolute bottom-6 left-6 px-5 py-2 rounded-full backdrop-blur-xl bg-[#C9A961] text-black text-sm font-bold tracking-wider shadow-lg z-10"
-                  >
-                    {selectedDish.category}
-                  </motion.div>
+            <motion.p
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-6"
+            >
+              {selectedDish.description}
+            </motion.p>
 
-                  {/* Emoji flotante */}
-                  <motion.div
-                    className="absolute top-6 left-6 text-5xl z-10"
-                    animate={{
-                      rotate: [0, 15, -15, 0],
-                      y: [0, -15, 0]
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    {selectedDish.icon}
-                  </motion.div>
-                </div>
+            <div className="w-12 sm:w-16 h-0.5 bg-[#C9A961] mb-3 sm:mb-6"></div>
 
-                {/* Contenido - derecha */}
-                <div className="md:col-span-3 p-8 md:p-12 flex flex-col justify-center">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.2, type: 'spring' }}
-                    className="inline-block self-start px-8 py-3 rounded-2xl text-4xl font-bold mb-6 bg-[#C9A961]/20 border-2 border-[#C9A961] text-[#C9A961]"
-                  >
-                    {selectedDish.price}
-                  </motion.div>
+            <motion.div
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="mb-4 sm:mb-8"
+            >
+              <p className="text-gray-400 text-sm sm:text-base italic">
+                {selectedDish.ingredients}
+              </p>
+            </motion.div>
 
-                  <motion.h2
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-4xl md:text-5xl font-serif italic text-white mb-4 leading-tight"
-                  >
-                    {selectedDish.name}
-                  </motion.h2>
-
-                  <motion.p
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.4 }}
-                    className="text-gray-300 text-lg leading-relaxed mb-6"
-                  >
-                    {selectedDish.description}
-                  </motion.p>
-
-                  <div className="w-16 h-0.5 bg-[#C9A961] mb-6"></div>
-
-                  <motion.div
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="mb-8"
-                  >
-        
-                    <p className="text-gray-400 text-base italic">
-                      {selectedDish.ingredients}
-                    </p>
-                  </motion.div>
-
-                  <motion.a
-                    href="#reservar"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.6 }}
-                    whileHover={{ scale: 1.05, y: -3 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-[#C9A961] hover:bg-[#FFD700] text-black text-lg font-bold tracking-wider uppercase shadow-2xl shadow-[#C9A961]/50 transition-all self-start"
-                  >
-                    <span className="text-2xl">{selectedDish.icon}</span>
+            <motion.a
+              href="#reservar"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 py-3 sm:px-10 sm:py-5 rounded-full bg-[#C9A961] hover:bg-[#FFD700] text-black text-sm sm:text-lg font-bold tracking-wider uppercase shadow-2xl shadow-[#C9A961]/50 transition-all self-start"
+              onClick={() => setSelectedDish(null)}
+            >
                     <span>RESERVAR MESA</span>
                   </motion.a>
                 </div>
